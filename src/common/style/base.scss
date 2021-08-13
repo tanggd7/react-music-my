@@ -1,0 +1,22 @@
+@import './variable.scss';
+
+body,
+html {
+  line-height: 1;
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial,
+    sans-serif, 'Droid Sans Fallback';
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background: $color-background;
+  color: $color-text;
+}
+
+.slide-page-enter-active,
+.slide-page-leave-active {
+  transition: all 0.3s;
+}
+
+.slide-page-enter,
+.slide-page-leave-to {
+  transform: translate3d(100%, 0, 0);
+}
