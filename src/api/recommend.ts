@@ -6,6 +6,7 @@ import { API_PREFIX } from './config'
 export interface IRecommend {
   pic?: string
   targetId?: number
+  bannerId?: number
 }
 
 export const getRecommendList = (): Promise<Array<IRecommend>> => {

@@ -1,12 +1,12 @@
+import BScroll from 'better-scroll'
+import PropTypes from 'prop-types'
 import React, {
   forwardRef,
-  useImperativeHandle,
   useEffect,
+  useImperativeHandle,
   useRef,
 } from 'react'
-import PropTypes from 'prop-types'
-import BScroll from 'better-scroll'
-import { IPosition } from './interface'
+import { IPosition } from './type'
 
 const Scroll = forwardRef((props: any, ref) => {
   const wrapper = useRef<HTMLDivElement>(null)

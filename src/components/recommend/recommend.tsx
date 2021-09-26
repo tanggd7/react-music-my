@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
 import BScroll from 'better-scroll'
-import LazyLoad from 'react-lazyload'
-import DefaultImg from '../../common/image/default.png'
 import Scroll from '../../base/scroll/scroll'
 import {
   getRecommendList,
@@ -11,6 +9,7 @@ import {
 } from '../../api/recommend'
 import './recommend.scss'
 import ImgLazy from '../img-lazy'
+import Slider from '../../base/slider/slider'
 
 const Recommend = (props: any) => {
   const recommendDom = useRef<HTMLDivElement>(null)
@@ -32,6 +31,21 @@ const Recommend = (props: any) => {
     <div className="recommend" ref={recommendDom}>
       <Scroll className="recommend-content" ref={scroll}>
         <div>
+          {!!recommendList.length && (
+            <div className="slider-wrapper">
+              <Slider>
+                {recommendList.map((item) => {
+                  return (
+                    <div key={item.bannerId}>
+                      <a>
+                        <img src={item.pic} alt=" " />
+                      </a>
+                    </div>
+                  )
+                })}
+              </Slider>
+            </div>
+          )}
           <div className="recommend-list">
             <h1 className="list-title">热门歌单推荐</h1>
             <ul>
