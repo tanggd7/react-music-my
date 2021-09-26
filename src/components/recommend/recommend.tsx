@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import BScroll from 'better-scroll'
+import LazyLoad from 'react-lazyload'
+import DefaultImg from '../../common/image/default.png'
 import Scroll from '../../base/scroll/scroll'
 import {
   getRecommendList,
@@ -8,6 +10,7 @@ import {
   IDisc,
 } from '../../api/recommend'
 import './recommend.scss'
+import ImgLazy from '../img-lazy'
 
 const Recommend = (props: any) => {
   const recommendDom = useRef<HTMLDivElement>(null)
@@ -36,7 +39,7 @@ const Recommend = (props: any) => {
                 return (
                   <li className="item" key={item.id}>
                     <div className="icon" id={`test${item.id}`}>
-                      <img width="60" height="60" src={item.picUrl} alt="" />
+                      <ImgLazy width="60" height="60" src={item.picUrl} />
                     </div>
                     <div className="text">
                       <h2
